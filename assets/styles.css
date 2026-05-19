@@ -6,14 +6,16 @@
 */
 
 :root {
+  /* FCL brand palette */
   --bg: #ffffff;
-  --bg-alt: #f7f7f5;
+  --bg-alt: #f4f5f5;        /* soft tint derived from #9ea8ae */
   --surface: #ffffff;
-  --border: #e4e4e0;
-  --text: #0e0e0e;
-  --muted: #5a5a55;
-  --accent: #f5c518;        /* placeholder yellow — replace with FCL brand color */
-  --accent-ink: #0e0e0e;    /* text color on top of accent */
+  --border: #e3e6e7;        /* lightened #9ea8ae for dividers */
+  --text: #212123;          /* primary near-black */
+  --muted: #6f7574;         /* secondary warm grey */
+  --soft: #9ea8ae;          /* cool grey-blue, subtle accent */
+  --accent: #212123;        /* solid dark = the accent. premium move. */
+  --accent-ink: #ffffff;    /* text on top of accent */
   --max: 1200px;
 }
 
@@ -212,7 +214,7 @@ a { color: inherit; }
   letter-spacing: 1.8px;
   color: var(--text);
   padding-bottom: 4px;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--soft);
   transition: border-color 0.15s;
 }
 .pillar-cta:hover { border-color: var(--text); }
@@ -244,7 +246,7 @@ a { color: inherit; }
 .event-row:hover { border-color: var(--text); }
 .event-image {
   background:
-    linear-gradient(135deg, #ebebe5, #d8d8d2);
+    linear-gradient(135deg, #eaecee, #cdd3d6);
   min-height: 280px;
   position: relative;
 }
@@ -255,7 +257,7 @@ a { color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #b8b8b0;
+  color: #9ea8ae;
   font-size: 11px;
   letter-spacing: 2.5px;
   font-weight: 800;
@@ -271,9 +273,9 @@ a { color: inherit; }
   letter-spacing: 1.8px;
   font-size: 11px;
   font-weight: 800;
-  color: var(--text);
+  color: var(--accent-ink);
   background: var(--accent);
-  padding: 4px 10px;
+  padding: 5px 11px;
   display: inline-block;
   align-self: flex-start;
   margin-bottom: 16px;
@@ -308,7 +310,7 @@ a { color: inherit; }
   color: var(--text);
   align-self: flex-start;
   padding-bottom: 4px;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--soft);
 }
 .event-cta:hover { border-color: var(--text); }
 
@@ -369,7 +371,7 @@ a { color: inherit; }
 .ig-tile {
   aspect-ratio: 1;
   background:
-    linear-gradient(135deg, #ebebe5, #d8d8d2);
+    linear-gradient(135deg, #eaecee, #cdd3d6);
   border-radius: 2px;
   position: relative;
 }
@@ -380,7 +382,7 @@ a { color: inherit; }
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #b8b8b0;
+  color: #9ea8ae;
   font-size: 11px;
   letter-spacing: 2px;
   font-weight: 800;
@@ -401,7 +403,7 @@ a { color: inherit; }
 .contact-block a {
   color: var(--text);
   text-decoration: none;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--soft);
   padding-bottom: 2px;
 }
 .contact-block a:hover { border-color: var(--text); }
@@ -433,7 +435,7 @@ a { color: inherit; }
   color: var(--text);
   text-decoration: none;
   font-weight: 700;
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--soft);
   padding-bottom: 2px;
 }
 .footer-partners {
@@ -468,7 +470,7 @@ a { color: inherit; }
 .footer-legal a {
   color: var(--muted);
   text-decoration: underline;
-  text-decoration-color: var(--accent);
+  text-decoration-color: var(--soft);
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
@@ -488,7 +490,7 @@ a { color: inherit; }
 .not-found h1 { font-size: 140px; margin-bottom: 16px; letter-spacing: -4px; font-weight: 900; }
 .not-found a {
   color: var(--text);
-  border-bottom: 2px solid var(--accent);
+  border-bottom: 2px solid var(--soft);
   text-decoration: none;
   padding-bottom: 2px;
   font-weight: 700;
