@@ -48,6 +48,16 @@ a { color: inherit; }
   letter-spacing: 1px;
   text-decoration: none;
   color: var(--text);
+  display: inline-flex;
+  align-items: center;
+}
+.brand-logo {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+@media (max-width: 800px) {
+  .brand-logo { height: 36px; }
 }
 .site-nav {
   display: flex; gap: 32px;
@@ -414,6 +424,15 @@ a { color: inherit; }
   border-top: 1px solid var(--border);
   padding: 80px 40px 40px;
   text-align: center;
+}
+.footer-logo {
+  height: 80px;
+  width: auto;
+  margin: 0 auto 28px;
+  display: block;
+}
+@media (max-width: 800px) {
+  .footer-logo { height: 64px; }
 }
 .footer-tagline {
   font-size: clamp(32px, 4vw, 48px);
