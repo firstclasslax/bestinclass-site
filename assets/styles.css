@@ -135,6 +135,8 @@ a { color: inherit; }
   color: var(--bg);
 }
 .cta-primary:hover { background: #2a2a2a; transform: translateY(-1px); }
+.hero .cta-primary { background: #ec4899; color: #ffffff; }
+.hero .cta-primary:hover { background: #db2777; }
 
 /* ------- COLLEGE LOGO PARADE ------- */
 .logo-parade {
