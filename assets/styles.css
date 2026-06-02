@@ -72,8 +72,8 @@ a { color: inherit; }
 }
 .site-nav a:hover { opacity: 0.55; }
 .nav-cta {
-  background: var(--text);
-  color: var(--bg);
+  background: #ec4899;
+  color: #ffffff;
   padding: 11px 22px;
   text-decoration: none;
   font-weight: 800;
@@ -81,7 +81,7 @@ a { color: inherit; }
   letter-spacing: 1.5px;
   border-radius: 2px;
 }
-.nav-cta:hover { background: #2a2a2a; }
+.nav-cta:hover { background: #db2777; }
 
 @media (max-width: 800px) {
   .site-nav { display: none; }
