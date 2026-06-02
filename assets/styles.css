@@ -52,12 +52,12 @@ a { color: inherit; }
   align-items: center;
 }
 .brand-logo {
-  height: 44px;
+  height: 53px;
   width: auto;
   display: block;
 }
 @media (max-width: 800px) {
-  .brand-logo { height: 36px; }
+  .brand-logo { height: 43px; }
 }
 .site-nav {
   display: flex; gap: 32px;
