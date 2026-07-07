@@ -694,6 +694,85 @@ a { color: inherit; }
   .path-grid { grid-template-columns: 1fr; gap: 16px; }
 }
 
+/* ------- HOTELS SECTION ------- */
+.hotels-groups {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+.hotels-group-label {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--border);
+}
+.hotels-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.hotel-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.15s;
+}
+.hotel-card:hover { border-color: var(--text); }
+.hotel-name {
+  font-weight: 900;
+  font-size: 17px;
+  letter-spacing: -0.3px;
+  line-height: 1.25;
+  margin-bottom: 12px;
+}
+.hotel-meta {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+  margin-bottom: 20px;
+  flex: 1;
+}
+.hotel-cta {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--primary);
+  align-self: flex-start;
+  transition: opacity 0.15s;
+}
+.hotel-cta:hover { opacity: 0.7; }
+.hotels-fallback {
+  max-width: var(--max);
+  margin: 48px auto 0;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+.hotels-fallback a {
+  color: var(--text);
+  font-weight: 700;
+  border-bottom: 2px solid var(--soft);
+  text-decoration: none;
+  padding-bottom: 2px;
+}
+@media (max-width: 900px) {
+  .hotels-grid { grid-template-columns: 1fr; gap: 16px; }
+  .hotels-groups { gap: 40px; }
+}
+
 /* ------- EVENT GROUPS (Fall / Winter subheaders + 2-col grid) ------- */
 .event-groups {
   max-width: var(--max);
