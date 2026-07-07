@@ -516,3 +516,133 @@ a { color: inherit; }
   padding-bottom: 2px;
   font-weight: 700;
 }
+
+/* ------- DUAL CTA ROW (hero + closer) ------- */
+.cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+}
+.cta-row-center { justify-content: center; }
+.cta-secondary {
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--text);
+}
+.cta-secondary:hover {
+  background: var(--text);
+  color: var(--bg);
+  transform: translateY(-1px);
+}
+.hero .cta-secondary { border-color: #ec4899; color: #ec4899; }
+.hero .cta-secondary:hover { background: #ec4899; color: #ffffff; }
+@media (max-width: 600px) {
+  .cta-row { flex-direction: column; align-items: stretch; }
+  .cta-row .cta { text-align: center; }
+}
+
+/* ------- FAQ ACCORDION ------- */
+.faq-list {
+  max-width: 800px;
+  margin: 0 auto;
+}
+.faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
+}
+.faq-item:first-child { border-top: 1px solid var(--border); }
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.2px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: '+';
+  font-size: 24px;
+  font-weight: 400;
+  color: var(--muted);
+  transition: transform 0.15s;
+}
+.faq-item[open] summary::after {
+  content: '−';
+}
+.faq-item p {
+  margin-top: 16px;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+/* ------- CREDIBILITY BLOCK (testimonials in About) ------- */
+.credibility-block {
+  max-width: var(--max);
+  margin: 80px auto 0;
+  padding-top: 60px;
+  border-top: 1px solid var(--border);
+}
+.testimonial-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+.testimonial {
+  padding: 32px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.testimonial p {
+  font-size: 18px;
+  line-height: 1.5;
+  margin-bottom: 16px;
+  font-style: italic;
+}
+.testimonial cite {
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  font-style: normal;
+}
+@media (max-width: 700px) {
+  .testimonial-row { grid-template-columns: 1fr; gap: 24px; }
+}
+
+/* ------- CLOSING CTA BANNER ------- */
+.closer {
+  padding: 120px 40px;
+  background: var(--text);
+  color: var(--bg);
+  text-align: center;
+}
+.closer-inner { max-width: 800px; margin: 0 auto; }
+.closer .eyebrow-center {
+  color: #ec4899;
+  margin-bottom: 24px;
+}
+.closer h2 {
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 1.05;
+  letter-spacing: -2px;
+  font-weight: 900;
+  margin-bottom: 40px;
+  color: var(--bg);
+}
+.closer .cta-primary { background: #ec4899; color: #ffffff; }
+.closer .cta-primary:hover { background: #db2777; }
+.closer .cta-secondary { border-color: var(--bg); color: var(--bg); }
+.closer .cta-secondary:hover { background: var(--bg); color: var(--text); }
+.closer .cta-note {
+  margin-top: 24px;
+  color: rgba(255,255,255,0.65);
+  font-size: 13px;
+}
