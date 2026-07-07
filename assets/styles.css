@@ -650,3 +650,13 @@ a { color: inherit; }
   color: rgba(255,255,255,0.65);
   font-size: 13px;
 }
+
+/* ------- EVENT CTA — TBA state ------- */
+.event-cta-tba {
+  color: var(--muted);
+  border-bottom-color: var(--muted);
+  cursor: default;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+}
+.event-cta-tba:hover { border-color: var(--muted); }
