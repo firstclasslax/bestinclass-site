@@ -678,7 +678,7 @@ a { color: inherit; }
   color: var(--bg);
   transform: translateY(-1px);
 }
-.hero .cta-secondary { border-color: var(--secondary); color: var(--secondary); }
+.hero .cta-secondary { border-color: var(--secondary); color: #ffffff; background: rgba(219, 58, 52, 0.15); }
 .hero .cta-secondary:hover { background: var(--secondary); color: #ffffff; }
 @media (max-width: 600px) {
   .cta-row { flex-direction: column; align-items: stretch; }
