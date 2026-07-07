@@ -109,12 +109,13 @@ a { color: inherit; }
 }
 .eyebrow-center { text-align: center; }
 .hero h1 {
-  font-size: clamp(64px, 12vw, 160px);
-  line-height: 0.92;
-  letter-spacing: -4px;
+  font-size: clamp(44px, 10vw, 120px);
+  line-height: 1;
+  letter-spacing: -2px;
   font-weight: 900;
   margin-bottom: 36px;
   text-transform: none;
+  white-space: nowrap;
 }
 .tagline {
   color: var(--muted);
