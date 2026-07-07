@@ -650,6 +650,59 @@ a { color: inherit; }
 }
 .event-cta-tba:hover { border-color: var(--muted); }
 
+/* ------- COACH PARADE (Men's + Women's attending coaches) ------- */
+.coach-parade {
+  padding: 80px 40px;
+  background: var(--bg-alt);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.coach-parade-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
+}
+.coach-parade-head {
+  font-size: clamp(32px, 4.5vw, 52px);
+  font-weight: 900;
+  letter-spacing: -1.5px;
+  line-height: 1.05;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+.coach-parade-note {
+  color: var(--muted);
+  font-size: 15px;
+  margin-bottom: 44px;
+}
+.coach-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  text-align: left;
+}
+.coach-column-label {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--secondary);
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--border);
+}
+.coach-stream {
+  font-size: clamp(15px, 1.6vw, 19px);
+  font-weight: 700;
+  line-height: 1.55;
+  letter-spacing: -0.2px;
+  color: var(--text);
+}
+@media (max-width: 900px) {
+  .coach-columns { grid-template-columns: 1fr; gap: 32px; }
+  .coach-parade { padding: 60px 24px; }
+}
+
 /* ------- WHO BIC IS FOR — 3-card path grid ------- */
 .path-grid {
   display: grid;
