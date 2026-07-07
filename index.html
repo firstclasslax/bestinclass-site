@@ -379,6 +379,41 @@
       </div>
     </section>
 
+    <!-- Past All-Stars -->
+    <section id="allstars" class="section section-alt">
+      <div class="section-head">
+        <p class="eyebrow">HISTORY</p>
+        <h2>Past All-Stars.</h2>
+        <p class="lede">Players selected at previous BIC events. Selection at a BIC event puts you in front of the coaches deciding recruiting classes.</p>
+      </div>
+
+      <div class="allstars-tabs" role="group" aria-label="Filter All-Stars by year">
+        <button class="allstar-tab active" data-year="2025">2025</button>
+        <button class="allstar-tab" data-year="2024">2024</button>
+        <button class="allstar-tab" data-year="2023">2023</button>
+      </div>
+
+      <div class="allstar-panel active" data-year="2025">
+        <p class="allstars-note">2025 All-Star roster coming soon. Matt to send list.</p>
+      </div>
+      <div class="allstar-panel" data-year="2024">
+        <p class="allstars-note">2024 All-Star roster coming soon.</p>
+      </div>
+      <div class="allstar-panel" data-year="2023">
+        <p class="allstars-note">2023 All-Star roster coming soon.</p>
+      </div>
+    </section>
+
+    <!-- Media / broadcast callout -->
+    <section class="media-callout">
+      <div class="media-callout-inner">
+        <p class="eyebrow-center">FILMED BY</p>
+        <h2>Every event, professionally filmed.</h2>
+        <p class="media-callout-note">NLV Productions films every BIC event. Multi-camera coverage, professional cuts, and post-event footage available to every family. No phone-shot highlights. No misses.</p>
+        <a href="https://nlvproductions.com/events/host/first-class-lacrosse" target="_blank" rel="noopener" class="cta cta-primary">SEE PAST EVENT FILM</a>
+      </div>
+    </section>
+
     <!-- About -->
     <section id="about" class="section section-alt">
       <div class="section-head">
@@ -418,6 +453,25 @@
     </section>
 
   </main>
+
+  <!-- Partner strip -->
+  <section class="partner-strip">
+    <p class="eyebrow-center">OUR PARTNERS</p>
+    <div class="partner-row">
+      <a href="https://nlvproductions.com" target="_blank" rel="noopener" class="partner-tile">
+        <span class="partner-name">NLV Productions</span>
+        <span class="partner-desc">Event filming</span>
+      </a>
+      <a href="https://www.deemercircle.com" target="_blank" rel="noopener" class="partner-tile">
+        <span class="partner-name">Deemer Circle</span>
+        <span class="partner-desc">Player mentorship</span>
+      </a>
+      <a href="https://landing.verticalinsure.com/1st-class-lax" target="_blank" rel="noopener" class="partner-tile">
+        <span class="partner-name">Vertical Insure</span>
+        <span class="partner-desc">Event insurance</span>
+      </a>
+    </div>
+  </section>
 
   <footer class="site-footer">
     <img src="/assets/images/bic-logo.png" alt="Best In Class" class="footer-logo">
@@ -473,6 +527,22 @@
           document.querySelectorAll('.event-group').forEach(function(group) {
             var visible = group.querySelectorAll('.event-row:not(.is-hidden)');
             group.classList.toggle('is-hidden', visible.length === 0);
+          });
+        });
+      });
+    })();
+
+    // Past All-Stars tabs
+    (function() {
+      var tabs = document.querySelectorAll('.allstar-tab');
+      if (!tabs.length) return;
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var year = tab.dataset.year;
+          tabs.forEach(function(t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+          document.querySelectorAll('.allstar-panel').forEach(function(panel) {
+            panel.classList.toggle('active', panel.dataset.year === year);
           });
         });
       });
