@@ -660,3 +660,48 @@ a { color: inherit; }
   letter-spacing: 1.8px;
 }
 .event-cta-tba:hover { border-color: var(--muted); }
+
+/* ------- EVENT GROUPS (Fall / Winter subheaders + 2-col grid) ------- */
+.event-groups {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+.event-group-label {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 32px;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--border);
+}
+.event-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+/* Inside the grid, event cards stack image on top, body below */
+.event-grid .event-row {
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr;
+}
+.event-grid .event-image {
+  min-height: 220px;
+}
+.event-grid .event-body {
+  padding: 32px;
+}
+.event-grid .event-body h3 {
+  font-size: 28px;
+}
+@media (max-width: 800px) {
+  .event-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .event-groups { gap: 60px; }
+}
