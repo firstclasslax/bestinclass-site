@@ -51,6 +51,14 @@
       </div>
     </section>
 
+    <!-- Countdown strip -->
+    <section class="countdown-strip" data-event-date="2026-10-24">
+      <p>
+        <span id="countdown-days">--</span>
+        <span class="countdown-label">days until BIC Fall Showcase · Oct 24, 2026</span>
+      </p>
+    </section>
+
     <!-- College commitment parade -->
     <section class="logo-parade">
       <p class="eyebrow-center">WHERE OUR ALUMNI PLAY</p>
@@ -151,14 +159,25 @@
         <p class="lede">Elite training and evaluation events that bring the top high school lacrosse players together for real instruction, real competition, and real exposure.</p>
       </div>
 
+      <div class="events-filter" role="group" aria-label="Filter events by grad class">
+        <button class="events-filter-pill active" data-filter="all">All</button>
+        <button class="events-filter-pill" data-filter="2027">2027</button>
+        <button class="events-filter-pill" data-filter="2028">2028</button>
+        <button class="events-filter-pill" data-filter="2029">2029</button>
+        <button class="events-filter-pill" data-filter="2030">2030</button>
+        <button class="events-filter-pill" data-filter="2031">2031</button>
+      </div>
+
       <div class="event-groups">
 
         <div class="event-group">
           <h3 class="event-group-label">Fall</h3>
           <div class="event-grid">
 
-            <article class="event-row">
-              <div class="event-image" aria-hidden="true"></div>
+            <article class="event-row" data-grads="2029,2030">
+              <div class="event-image" aria-hidden="true">
+                <span class="event-status event-status-open">OPEN</span>
+              </div>
               <div class="event-body">
                 <p class="event-tag">MEN'S &amp; WOMEN'S · 2029 &amp; 2030</p>
                 <h3>BIC Fall Showcase</h3>
@@ -168,8 +187,10 @@
               </div>
             </article>
 
-            <article class="event-row">
-              <div class="event-image" aria-hidden="true"></div>
+            <article class="event-row" data-grads="2031">
+              <div class="event-image" aria-hidden="true">
+                <span class="event-status event-status-invite">INVITE-ONLY</span>
+              </div>
               <div class="event-body">
                 <p class="event-tag">WOMEN'S · CLASS OF 2031</p>
                 <h3>BIC Women's Spark</h3>
@@ -186,8 +207,10 @@
           <h3 class="event-group-label">Winter</h3>
           <div class="event-grid">
 
-            <article class="event-row">
-              <div class="event-image" aria-hidden="true"></div>
+            <article class="event-row" data-grads="2027,2028">
+              <div class="event-image" aria-hidden="true">
+                <span class="event-status event-status-opens">OPENS AUG 1</span>
+              </div>
               <div class="event-body">
                 <p class="event-tag">COMMITTED WOMEN'S PLAYERS</p>
                 <h3>BIC Winter Committed</h3>
@@ -197,13 +220,15 @@
               </div>
             </article>
 
-            <article class="event-row">
-              <div class="event-image" aria-hidden="true"></div>
+            <article class="event-row" data-grads="2029,2030">
+              <div class="event-image" aria-hidden="true">
+                <span class="event-status event-status-opens">OPENS AUG 1</span>
+              </div>
               <div class="event-body">
                 <p class="event-tag">BOYS &amp; GIRLS · 2029 &amp; 2030</p>
                 <h3>BIC Winter Showcase</h3>
                 <p class="event-meta">January 9–10, 2027 · IMG Academy · Bradenton, FL</p>
-                <p class="event-desc">Application-only showcase for the top 2029 and 2030 boys and girls at IMG Academy.</p>
+                <p class="event-desc">Invite-only showcase for the top 2029 and 2030 boys and girls at IMG Academy.</p>
                 <span class="event-cta event-cta-tba">REGISTRATION OPENS AUG 1</span>
               </div>
             </article>
@@ -395,7 +420,46 @@
   </footer>
 
   <script>
+    // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Countdown to next event
+    (function() {
+      var strip = document.querySelector('.countdown-strip');
+      if (!strip) return;
+      var target = new Date(strip.dataset.eventDate + 'T00:00:00').getTime();
+      var now = Date.now();
+      var days = Math.max(0, Math.ceil((target - now) / (1000 * 60 * 60 * 24)));
+      var el = document.getElementById('countdown-days');
+      if (el) el.textContent = days;
+      if (days === 0) strip.style.display = 'none';
+    })();
+
+    // Grad-class filter
+    (function() {
+      var pills = document.querySelectorAll('.events-filter-pill');
+      if (!pills.length) return;
+      pills.forEach(function(pill) {
+        pill.addEventListener('click', function() {
+          var filter = pill.dataset.filter;
+          pills.forEach(function(p) { p.classList.remove('active'); });
+          pill.classList.add('active');
+          document.querySelectorAll('.event-row').forEach(function(card) {
+            if (filter === 'all') {
+              card.classList.remove('is-hidden');
+            } else {
+              var grads = (card.dataset.grads || '').split(',');
+              card.classList.toggle('is-hidden', grads.indexOf(filter) === -1);
+            }
+          });
+          // Hide any event-group whose cards are all hidden
+          document.querySelectorAll('.event-group').forEach(function(group) {
+            var visible = group.querySelectorAll('.event-row:not(.is-hidden)');
+            group.classList.toggle('is-hidden', visible.length === 0);
+          });
+        });
+      });
+    })();
   </script>
 </body>
 </html>

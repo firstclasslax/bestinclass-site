@@ -650,6 +650,87 @@ a { color: inherit; }
 }
 .event-cta-tba:hover { border-color: var(--muted); }
 
+/* ------- COUNTDOWN STRIP ------- */
+.countdown-strip {
+  background: var(--text);
+  color: var(--bg);
+  padding: 14px 24px;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+}
+.countdown-strip p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+}
+.countdown-strip #countdown-days {
+  color: var(--secondary);
+  font-size: 18px;
+  font-weight: 900;
+  margin-right: 6px;
+}
+.countdown-label { opacity: 0.85; }
+@media (max-width: 600px) {
+  .countdown-strip p { font-size: 13px; }
+}
+
+/* ------- EVENT STATUS BADGE ------- */
+.event-image { position: relative; }
+.event-status {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  padding: 6px 12px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  border-radius: 3px;
+  color: #ffffff;
+  z-index: 2;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+.event-status-open { background: #16a34a; }
+.event-status-invite { background: var(--primary); }
+.event-status-soldout { background: #414141; }
+.event-status-waitlist { background: var(--secondary); }
+.event-status-opens { background: #6b7280; }
+
+/* ------- EVENTS GRAD-CLASS FILTER ------- */
+.events-filter {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 auto 48px;
+  max-width: var(--max);
+}
+.events-filter-pill {
+  padding: 10px 20px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--text);
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+}
+.events-filter-pill:hover {
+  border-color: var(--text);
+}
+.events-filter-pill.active {
+  background: var(--primary);
+  color: #ffffff;
+  border-color: var(--primary);
+}
+.event-row.is-hidden,
+.event-group.is-hidden { display: none; }
+
 /* ------- COACH PARADE (Men's + Women's attending coaches) ------- */
 .coach-parade {
   padding: 80px 40px;
