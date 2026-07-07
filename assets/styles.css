@@ -6,16 +6,20 @@
 */
 
 :root {
-  /* FCL brand palette */
+  /* BIC brand palette (Charlie Ragusa spec, July 2026) */
   --bg: #ffffff;
-  --bg-alt: #f4f5f5;        /* soft tint derived from #9ea8ae */
+  --bg-alt: #f4f5f5;
   --surface: #ffffff;
-  --border: #e3e6e7;        /* lightened #9ea8ae for dividers */
-  --text: #212123;          /* primary near-black */
-  --muted: #6f7574;         /* secondary warm grey */
-  --soft: #9ea8ae;          /* cool grey-blue, subtle accent */
-  --accent: #212123;        /* solid dark = the accent. premium move. */
-  --accent-ink: #ffffff;    /* text on top of accent */
+  --border: #e3e6e7;
+  --text: #413c3c;          /* warm near-black — body text */
+  --muted: #6f7574;         /* muted grey — secondary text */
+  --soft: #9ea8ae;
+  --primary: #326fb5;       /* BIC brand primary — Apply CTAs */
+  --primary-hover: #285a94;
+  --secondary: #db3a34;     /* BIC brand secondary — Coaches Nominate CTAs */
+  --secondary-hover: #b8302a;
+  --accent: #326fb5;        /* aliased to primary for eyebrows / accents */
+  --accent-ink: #ffffff;
   --max: 1200px;
 }
 
@@ -72,7 +76,7 @@ a { color: inherit; }
 }
 .site-nav a:hover { opacity: 0.55; }
 .nav-cta {
-  background: #ec4899;
+  background: var(--primary);
   color: #ffffff;
   padding: 11px 22px;
   text-decoration: none;
@@ -81,7 +85,7 @@ a { color: inherit; }
   letter-spacing: 1.5px;
   border-radius: 2px;
 }
-.nav-cta:hover { background: #db2777; }
+.nav-cta:hover { background: var(--primary-hover); }
 
 @media (max-width: 800px) {
   .site-nav { display: none; }
@@ -135,8 +139,8 @@ a { color: inherit; }
   color: var(--bg);
 }
 .cta-primary:hover { background: #2a2a2a; transform: translateY(-1px); }
-.hero .cta-primary { background: #ec4899; color: #ffffff; }
-.hero .cta-primary:hover { background: #db2777; }
+.hero .cta-primary { background: var(--primary); color: #ffffff; }
+.hero .cta-primary:hover { background: var(--primary-hover); }
 
 /* ------- COLLEGE LOGO PARADE ------- */
 .logo-parade {
@@ -535,8 +539,8 @@ a { color: inherit; }
   color: var(--bg);
   transform: translateY(-1px);
 }
-.hero .cta-secondary { border-color: #ec4899; color: #ec4899; }
-.hero .cta-secondary:hover { background: #ec4899; color: #ffffff; }
+.hero .cta-secondary { border-color: var(--secondary); color: var(--secondary); }
+.hero .cta-secondary:hover { background: var(--secondary); color: #ffffff; }
 @media (max-width: 600px) {
   .cta-row { flex-direction: column; align-items: stretch; }
   .cta-row .cta { text-align: center; }
@@ -626,7 +630,7 @@ a { color: inherit; }
 }
 .closer-inner { max-width: 800px; margin: 0 auto; }
 .closer .eyebrow-center {
-  color: #ec4899;
+  color: var(--secondary);
   margin-bottom: 24px;
 }
 .closer h2 {
@@ -637,8 +641,8 @@ a { color: inherit; }
   margin-bottom: 40px;
   color: var(--bg);
 }
-.closer .cta-primary { background: #ec4899; color: #ffffff; }
-.closer .cta-primary:hover { background: #db2777; }
+.closer .cta-primary { background: var(--primary); color: #ffffff; }
+.closer .cta-primary:hover { background: var(--primary-hover); }
 .closer .cta-secondary { border-color: var(--bg); color: var(--bg); }
 .closer .cta-secondary:hover { background: var(--bg); color: var(--text); }
 .closer .cta-note {
