@@ -790,7 +790,17 @@ a { color: inherit; }
   color: var(--secondary);
   font-size: 18px;
   font-weight: 900;
-  margin-right: 6px;
+  margin: 0 6px 0 12px;
+}
+.countdown-eyebrow {
+  background: var(--secondary);
+  color: #ffffff;
+  padding: 3px 10px;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 1.6px;
+  border-radius: 2px;
+  margin-right: 4px;
 }
 .countdown-label { opacity: 0.85; }
 @media (max-width: 600px) {
@@ -1025,10 +1035,25 @@ a { color: inherit; }
   padding-bottom: 2px;
 }
 
-/* ------- VENUE BLOCK (map + address under Hotels) ------- */
-.venue-block {
+/* ------- VENUE GROUPS (Fall Chase / Winter IMG) ------- */
+.venue-groups {
   max-width: var(--max);
   margin: 64px auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+.venue-group-label {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: var(--primary);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--border);
+}
+.venue-block {
   display: grid;
   grid-template-columns: 1fr 1.4fr;
   gap: 40px;
