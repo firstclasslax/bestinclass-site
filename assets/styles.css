@@ -851,35 +851,97 @@ a { color: inherit; }
 .countdown-strip {
   background: var(--text);
   color: var(--bg);
-  padding: 14px 24px;
-  text-align: center;
   border-bottom: 1px solid var(--border);
 }
-.countdown-strip p {
-  margin: 0;
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.4px;
+.countdown-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 26px 40px;
+  text-decoration: none;
+  color: inherit;
+  max-width: 1200px;
+  margin: 0 auto;
+  transition: background 0.15s;
 }
-.countdown-strip #countdown-days {
-  color: var(--secondary);
-  font-size: 18px;
-  font-weight: 900;
-  margin: 0 6px 0 12px;
-}
+.countdown-link:hover { background: rgba(255, 255, 255, 0.04); }
 .countdown-eyebrow {
   background: var(--secondary);
   color: #ffffff;
-  padding: 3px 10px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1.8px;
+  border-radius: 2px;
+  white-space: nowrap;
+}
+.countdown-main {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.countdown-strip #countdown-days {
+  color: var(--secondary);
+  font-size: 44px;
+  font-weight: 900;
+  letter-spacing: -2px;
+  line-height: 1;
+}
+.countdown-days-label {
+  font-size: 15px;
+  font-weight: 700;
+  opacity: 0.75;
+  letter-spacing: 0.3px;
+}
+.countdown-event-name {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+.countdown-event-date {
+  font-size: 15px;
+  opacity: 0.7;
+  font-weight: 600;
+}
+.countdown-arrow {
+  font-size: 26px;
+  color: var(--secondary);
+  font-weight: 900;
+  line-height: 1;
+  display: inline-block;
+  transition: transform 0.2s;
+  margin-left: 8px;
+}
+.countdown-jump {
   font-size: 11px;
   font-weight: 900;
-  letter-spacing: 1.6px;
-  border-radius: 2px;
-  margin-right: 4px;
+  letter-spacing: 2px;
+  color: rgba(255, 255, 255, 0.7);
+  padding-left: 4px;
+  border-left: 2px solid var(--secondary);
+  padding-left: 12px;
 }
-.countdown-label { opacity: 0.85; }
-@media (max-width: 600px) {
-  .countdown-strip p { font-size: 13px; }
+.countdown-link:hover .countdown-arrow { transform: translateY(4px); }
+.countdown-link:hover .countdown-jump { color: #ffffff; }
+@keyframes countdownArrowBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+.countdown-arrow { animation: countdownArrowBounce 2.4s ease-in-out infinite; }
+@media (max-width: 700px) {
+  .countdown-link {
+    padding: 20px 20px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .countdown-strip #countdown-days { font-size: 36px; }
+  .countdown-event-name { font-size: 15px; }
+  .countdown-event-date { font-size: 13px; }
+  .countdown-days-label { font-size: 13px; }
+  .countdown-jump { display: none; }
 }
 
 /* ------- EVENT STATUS BADGE ------- */
