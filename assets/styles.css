@@ -1126,6 +1126,16 @@ a { color: inherit; }
   font-size: 10px;
   min-width: 46px;
 }
+.hotel-detail a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--soft);
+  transition: color 0.15s, border-color 0.15s;
+}
+.hotel-detail a:hover {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
 .hotel-cta {
   color: var(--primary);
   text-decoration: none;
