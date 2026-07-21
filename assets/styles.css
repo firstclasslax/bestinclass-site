@@ -24,7 +24,12 @@
 }
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+section[id] { scroll-margin-top: 100px; }
+@media (max-width: 800px) {
+  html { scroll-padding-top: 80px; }
+  section[id] { scroll-margin-top: 80px; }
+}
 body {
   background: var(--bg);
   color: var(--text);
@@ -88,8 +93,30 @@ a { color: inherit; }
 .nav-cta:hover { background: var(--primary-hover); }
 
 @media (max-width: 800px) {
-  .site-nav { display: none; }
-  .site-header { padding: 16px 20px; }
+  .site-header {
+    flex-wrap: wrap;
+    padding: 12px 20px 8px;
+    gap: 8px;
+  }
+  .site-nav {
+    order: 3;
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    overflow-x: auto;
+    gap: 20px;
+    padding: 8px 0 4px;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .site-nav::-webkit-scrollbar { display: none; }
+  .site-nav a {
+    font-size: 11px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .nav-cta { padding: 9px 16px; font-size: 11px; }
 }
 
 /* ------- HERO ------- */
@@ -727,12 +754,22 @@ a { color: inherit; }
 .faq-item[open] summary::after {
   content: '−';
 }
+.faq-item summary:hover { color: var(--primary); }
 .faq-item p {
   margin-top: 10px;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.55;
+  padding-right: 32px;
 }
+.faq-item p a {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 1px solid var(--soft);
+  transition: border-color 0.15s;
+}
+.faq-item p a:hover { border-bottom-color: var(--primary); }
 
 /* ------- CREDIBILITY BLOCK (testimonials in About) ------- */
 .credibility-block {
