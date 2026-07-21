@@ -324,6 +324,9 @@ a { color: inherit; }
   margin-bottom: 16px;
   border-radius: 2px;
 }
+.event-tag-mens { background: var(--primary); color: #ffffff; }
+.event-tag-womens { background: var(--secondary); color: #ffffff; }
+.event-tag-coed { background: var(--text); color: #ffffff; }
 .event-body h3 {
   font-size: 36px;
   font-weight: 900;
