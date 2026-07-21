@@ -1084,7 +1084,61 @@ a { color: inherit; }
   .coach-parade { padding: 60px 24px; }
 }
 
-/* ------- WHO BIC IS FOR — 3-card path grid ------- */
+/* ------- ABOUT BEST IN CLASS — 2-column layout ------- */
+.about-section { padding: 100px 40px; }
+.about-grid {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+.about-left .eyebrow {
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+.about-left h2 {
+  color: var(--secondary);
+  font-size: clamp(42px, 5.5vw, 72px);
+  line-height: 1.02;
+  letter-spacing: -2px;
+  font-weight: 900;
+  margin-bottom: 28px;
+  text-transform: none;
+}
+.about-body {
+  font-size: 17px;
+  line-height: 1.65;
+  color: var(--text);
+}
+.about-right {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding-top: 78px;
+}
+.rising-line {
+  font-size: 19px;
+  line-height: 1.45;
+  color: var(--text);
+  font-weight: 700;
+}
+.rising-label {
+  color: var(--primary);
+  font-weight: 900;
+  margin-right: 4px;
+}
+@media (max-width: 900px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .about-right { padding-top: 0; }
+  .about-section { padding: 72px 24px; }
+}
+
+/* ------- WHO BIC IS FOR — 3-card path grid (removed section, CSS retained for backwards compat) ------- */
 .path-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
