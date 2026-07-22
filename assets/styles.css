@@ -593,9 +593,9 @@ a { color: inherit; }
 /* ------- FOR COACHES STRIP ------- */
 .coaches-strip {
   padding: 48px 40px;
-  background: var(--bg-alt);
-  border-top: 4px solid var(--secondary);
-  border-bottom: 1px solid var(--border);
+  background: var(--secondary);
+  color: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 .coaches-strip-inner {
   max-width: var(--max);
@@ -607,7 +607,8 @@ a { color: inherit; }
 }
 .coaches-strip-content { flex: 1; }
 .coaches-strip-content .eyebrow {
-  color: var(--secondary);
+  color: #ffffff;
+  opacity: 0.85;
   margin-bottom: 10px;
 }
 .coaches-strip-content h3 {
@@ -616,18 +617,18 @@ a { color: inherit; }
   letter-spacing: -0.5px;
   line-height: 1.15;
   margin: 0 0 8px;
-  color: var(--text);
+  color: #ffffff;
 }
 .coaches-strip-note {
-  color: var(--muted);
+  color: rgba(255, 255, 255, 0.85);
   font-size: 15px;
   line-height: 1.5;
   margin: 0;
 }
 .coaches-strip-cta {
   flex-shrink: 0;
-  background: var(--secondary);
-  color: #ffffff;
+  background: #ffffff;
+  color: var(--secondary);
   padding: 16px 28px;
   text-decoration: none;
   font-weight: 800;
@@ -638,7 +639,7 @@ a { color: inherit; }
   white-space: nowrap;
 }
 .coaches-strip-cta:hover {
-  background: var(--secondary-hover);
+  background: #f4f5f5;
   transform: translateY(-1px);
 }
 @media (max-width: 700px) {
