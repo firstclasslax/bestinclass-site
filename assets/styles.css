@@ -590,6 +590,67 @@ a { color: inherit; }
   font-style: italic;
 }
 
+/* ------- FOR COACHES STRIP ------- */
+.coaches-strip {
+  padding: 48px 40px;
+  background: var(--bg-alt);
+  border-top: 4px solid var(--secondary);
+  border-bottom: 1px solid var(--border);
+}
+.coaches-strip-inner {
+  max-width: var(--max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+.coaches-strip-content { flex: 1; }
+.coaches-strip-content .eyebrow {
+  color: var(--secondary);
+  margin-bottom: 10px;
+}
+.coaches-strip-content h3 {
+  font-size: clamp(24px, 3vw, 32px);
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+  margin: 0 0 8px;
+  color: var(--text);
+}
+.coaches-strip-note {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+}
+.coaches-strip-cta {
+  flex-shrink: 0;
+  background: var(--secondary);
+  color: #ffffff;
+  padding: 16px 28px;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1.6px;
+  border-radius: 2px;
+  transition: background 0.15s, transform 0.15s;
+  white-space: nowrap;
+}
+.coaches-strip-cta:hover {
+  background: var(--secondary-hover);
+  transform: translateY(-1px);
+}
+@media (max-width: 700px) {
+  .coaches-strip-inner {
+    flex-direction: column;
+    text-align: center;
+    align-items: stretch;
+    gap: 24px;
+  }
+  .coaches-strip-cta { align-self: center; }
+}
+
 /* ------- MEDIA / BROADCAST CALLOUT ------- */
 .media-callout {
   padding: 100px 40px;
