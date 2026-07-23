@@ -320,6 +320,7 @@ a { color: inherit; }
   min-height: 280px;
   position: relative;
 }
+.event-image[style]::after { display: none; }
 .event-image::after {
   content: "EVENT IMAGE";
   position: absolute;
