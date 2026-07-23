@@ -1243,7 +1243,7 @@ a { color: inherit; }
   margin-bottom: 20px;
 }
 .about-left h2 {
-  color: var(--secondary);
+  color: var(--primary);
   font-size: clamp(42px, 5.5vw, 72px);
   line-height: 1.02;
   letter-spacing: -2px;
@@ -1269,7 +1269,7 @@ a { color: inherit; }
   font-weight: 700;
 }
 .rising-label {
-  color: var(--primary);
+  color: var(--secondary);
   font-weight: 900;
   margin-right: 4px;
 }
