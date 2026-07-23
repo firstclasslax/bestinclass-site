@@ -872,13 +872,14 @@ a { color: inherit; }
 /* ------- CLOSING CTA BANNER ------- */
 .closer {
   padding: 120px 40px;
-  background: var(--text);
+  background: var(--secondary);
   color: var(--bg);
   text-align: center;
 }
 .closer-inner { max-width: 800px; margin: 0 auto; }
 .closer .eyebrow-center {
-  color: var(--secondary);
+  color: #ffffff;
+  opacity: 0.85;
   margin-bottom: 24px;
 }
 .closer h2 {
