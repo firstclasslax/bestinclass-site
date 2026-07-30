@@ -1146,6 +1146,155 @@ a { color: inherit; }
   .reviews-section { padding: 72px 24px; }
 }
 
+/* Reviews CTA + modal carousel */
+.reviews-cta-row {
+  max-width: var(--max);
+  margin: 40px auto 0;
+  text-align: center;
+}
+.reviews-more-btn {
+  padding: 16px 32px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 1.6px;
+  color: #ffffff;
+  background: var(--primary);
+  border: 2px solid var(--primary);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s, transform 0.15s;
+}
+.reviews-more-btn:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+  transform: translateY(-1px);
+}
+.reviews-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 22, 28, 0.78);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 24px;
+}
+.reviews-modal.is-open { display: flex; }
+.reviews-modal-inner {
+  background: var(--surface);
+  max-width: 680px;
+  width: 100%;
+  border-top: 4px solid var(--secondary);
+  border-radius: 4px;
+  padding: 56px 48px 40px;
+  position: relative;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+  max-height: 92vh;
+  overflow-y: auto;
+}
+.reviews-modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  font-size: 28px;
+  line-height: 1;
+  color: var(--muted);
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.15s;
+}
+.reviews-modal-close:hover { color: var(--text); }
+.reviews-modal-eyebrow {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 16px;
+}
+.reviews-modal-stars {
+  color: #fbbc04;
+  font-size: 22px;
+  letter-spacing: 4px;
+  margin-bottom: 24px;
+  line-height: 1;
+}
+.reviews-modal-quote {
+  font-size: 19px;
+  line-height: 1.55;
+  color: var(--text);
+  font-weight: 500;
+  font-style: normal;
+  margin: 0 0 28px;
+}
+.reviews-modal-attribution {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-style: normal;
+  border-top: 1px solid var(--border);
+  padding-top: 20px;
+  margin-bottom: 32px;
+}
+.reviews-modal-name {
+  font-weight: 900;
+  font-size: 15px;
+  color: var(--text);
+}
+.reviews-modal-role {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.reviews-modal-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+}
+.reviews-modal-prev,
+.reviews-modal-next {
+  padding: 10px 18px;
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: transparent;
+  border: 2px solid var(--primary);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s;
+}
+.reviews-modal-prev:hover,
+.reviews-modal-next:hover {
+  background: var(--primary);
+  color: #ffffff;
+}
+.reviews-modal-counter {
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+}
+@media (max-width: 600px) {
+  .reviews-modal-inner { padding: 48px 24px 32px; }
+  .reviews-modal-quote { font-size: 16px; }
+  .reviews-modal-nav { flex-wrap: wrap; justify-content: center; gap: 12px; }
+  .reviews-modal-counter { order: -1; width: 100%; text-align: center; }
+}
+
 /* ------- STAT CALLOUTS STRIP ------- */
 .stats-strip {
   padding: 72px 40px;

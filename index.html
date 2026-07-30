@@ -148,7 +148,30 @@
         </blockquote>
 
       </div>
+
+      <div class="reviews-cta-row">
+        <button type="button" id="reviews-more-btn" class="reviews-more-btn">READ MORE REVIEWS &rarr;</button>
+      </div>
     </section>
+
+    <!-- Reviews modal (carousel of 15 more reviews) -->
+    <div id="reviews-modal" class="reviews-modal" role="dialog" aria-modal="true" aria-labelledby="reviews-modal-heading">
+      <div class="reviews-modal-inner">
+        <button type="button" class="reviews-modal-close" aria-label="Close">&times;</button>
+        <p class="reviews-modal-eyebrow" id="reviews-modal-heading">Verified Google Reviews</p>
+        <div class="reviews-modal-stars">★★★★★</div>
+        <blockquote class="reviews-modal-quote"></blockquote>
+        <cite class="reviews-modal-attribution">
+          <span class="reviews-modal-name"></span>
+          <span class="reviews-modal-role"></span>
+        </cite>
+        <div class="reviews-modal-nav">
+          <button type="button" class="reviews-modal-prev" aria-label="Previous review">&larr; Prev</button>
+          <span class="reviews-modal-counter"></span>
+          <button type="button" class="reviews-modal-next" aria-label="Next review">Next &rarr;</button>
+        </div>
+      </div>
+    </div>
 
     <!-- Stat callouts strip -->
     <section class="stats-strip">
@@ -745,6 +768,86 @@
             panel.classList.toggle('active', panel.dataset.year === year);
           });
         });
+      });
+    })();
+
+    // Reviews modal carousel
+    (function() {
+      var reviews = [
+        { quote: "Growing the game the right way.", name: "Max L.", role: "Parent" },
+        { quote: "We had such a great experience and left each day eager to share a new drill, takeaway, or piece of feedback. It was awesome to have the opportunity to focus specifically on defense.", name: "Erin V.", role: "Parent" },
+        { quote: "Our son loved The Approach. It will be a must-attend for him and his defensive buddies moving forward. Well done Matt Dunn and staff.", name: "Ryan B.", role: "Parent" },
+        { quote: "Best In Class is a 10/10 experience. High quality coaches, drills, and very organized. The instructors have a high IQ and deep love for the game. My daughter has done many events and BIC takes the cake for being her favorite across the board.", name: "Nicole M.", role: "Parent" },
+        { quote: "The Best In Class showcase was phenomenal. It was so well run, the coaching top notch, and the venue was outstanding as well. Our 2028 son loved it. We highly recommend this event.", name: "Melissa B.", role: "Parent" },
+        { quote: "The best camp my daughter has attended yet. She got top-level coaching in a super fun environment, going head-to-head with top players from around the country. She came back super confident and immediately asked if she could go back next year.", name: "Mike B.", role: "Parent" },
+        { quote: "We have attended several summer and fall events and every time we have a great experience. Instruction is great, coaches are impressive, and teams are fair. When the weather was 105 degrees they modified the whole schedule to keep the boys safe. If you're unsure where to go, go here.", name: "Tara B.", role: "Parent" },
+        { quote: "My daughter has attended three Best In Class events and each has been an awesome experience — well organized, top coaches, excellent instruction. Deemer and Matt run top notch events. She is looking forward to the summer.", name: "Caroline C.", role: "Parent" },
+        { quote: "BIC exceeded our expectations in every way. The event was incredibly well-organized, with top-tier coaching and outstanding competition.", name: "Michelle T.", role: "Parent" },
+        { quote: "This was my daughter's 4th event with First Class Lacrosse. If you attend any event during recruiting, Best In Class is THE one. It's a cheat code for recruiting. All of the best coaches attend. Her exposure at her first BIC greatly increased her popularity as a recruit and brought her more offers on September 1st.", name: "Jennifer L.", role: "Parent · D1 Committed" },
+        { quote: "The training sessions exceeded my already high expectations. Each session was well-organized and maximized the time on the field. The positive and encouraging environment stood out — coaches pushed players to improve without being overbearing. I highly recommend First Class Lacrosse for any young player looking to develop their skillset.", name: "Andrew S.", role: "Parent" },
+        { quote: "Best In Class Committed Sixes was a great experience. Fast-paced, lots of touches, great refs. Highly recommend.", name: "Elizabeth J.", role: "Parent" },
+        { quote: "An awesome event. My daughter thoroughly enjoyed the instruction and play with top level players from across the country.", name: "Kari K.", role: "Parent" },
+        { quote: "Best In Class camps are always well organized with great competition. For rising Juniors, the college coach attendance at BIC is impressive. BIC is the one summer event I would recommend over all others for rising 9th, 10th, and 11th grade boys and girls.", name: "Drew P.", role: "Parent" },
+        { quote: "The Sound and Tradition girls had a blast playing with and against girls from a variety of club teams. The coaching staff was excellent and 95 degree weather didn't stop anyone.", name: "Jo-El S.", role: "Coach" }
+      ];
+
+      var modal = document.getElementById('reviews-modal');
+      var openBtn = document.getElementById('reviews-more-btn');
+      if (!modal || !openBtn) return;
+
+      var closeBtn = modal.querySelector('.reviews-modal-close');
+      var prevBtn = modal.querySelector('.reviews-modal-prev');
+      var nextBtn = modal.querySelector('.reviews-modal-next');
+      var quoteEl = modal.querySelector('.reviews-modal-quote');
+      var nameEl = modal.querySelector('.reviews-modal-name');
+      var roleEl = modal.querySelector('.reviews-modal-role');
+      var counterEl = modal.querySelector('.reviews-modal-counter');
+      var index = 0;
+
+      function render() {
+        var r = reviews[index];
+        quoteEl.textContent = '"' + r.quote + '"';
+        nameEl.textContent = r.name;
+        roleEl.textContent = r.role;
+        counterEl.textContent = (index + 1) + ' of ' + reviews.length;
+      }
+
+      function open() {
+        index = 0;
+        render();
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function close() {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+      }
+
+      function next() {
+        index = (index + 1) % reviews.length;
+        render();
+      }
+
+      function prev() {
+        index = (index - 1 + reviews.length) % reviews.length;
+        render();
+      }
+
+      openBtn.addEventListener('click', open);
+      closeBtn.addEventListener('click', close);
+      nextBtn.addEventListener('click', next);
+      prevBtn.addEventListener('click', prev);
+
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) close();
+      });
+
+      document.addEventListener('keydown', function(e) {
+        if (!modal.classList.contains('is-open')) return;
+        if (e.key === 'Escape') close();
+        else if (e.key === 'ArrowRight') next();
+        else if (e.key === 'ArrowLeft') prev();
       });
     })();
   </script>
