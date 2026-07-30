@@ -258,7 +258,7 @@
           <h3 class="event-group-label">Fall</h3>
           <div class="event-grid">
 
-            <article class="event-row" data-grads="2029,2030">
+            <article class="event-row" data-grads="2029,2030" data-event-start="2026-10-24" data-event-end="2026-10-26">
               <div class="event-image" style="background-image: url('/assets/images/bic-fall-showcase-mens.jpg'); background-size: cover; background-position: center;" aria-hidden="true">
                 <span class="event-status event-status-open">OPEN</span>
               </div>
@@ -271,7 +271,7 @@
               </div>
             </article>
 
-            <article class="event-row" data-grads="2029,2030">
+            <article class="event-row" data-grads="2029,2030" data-event-start="2026-10-24" data-event-end="2026-10-26">
               <div class="event-image" style="background-image: url('/assets/images/bic-fall-showcase-womens.jpg'); background-size: cover; background-position: center;" aria-hidden="true">
                 <span class="event-status event-status-open">OPEN</span>
               </div>
@@ -284,7 +284,7 @@
               </div>
             </article>
 
-            <article class="event-row" data-grads="2031">
+            <article class="event-row" data-grads="2031" data-event-start="2026-10-24" data-event-end="2026-10-24">
               <div class="event-image" style="background-image: url('/assets/images/bic-spark.jpg'); background-size: cover; background-position: center;" aria-hidden="true">
                 <span class="event-status event-status-invite">INVITE-ONLY</span>
               </div>
@@ -300,11 +300,11 @@
           </div>
         </div>
 
-        <div class="event-group">
+        <div class="event-group" id="event-winter-2026">
           <h3 class="event-group-label">Winter</h3>
           <div class="event-grid">
 
-            <article class="event-row" data-grads="2027,2028">
+            <article class="event-row" data-grads="2027,2028" data-event-start="2026-12-04" data-event-end="2026-12-06">
               <div class="event-image" style="background-image: url('/assets/images/bic-womens-committed.jpg'); background-size: cover; background-position: center;" aria-hidden="true">
                 <span class="event-status event-status-opens">OPENS AUG 1</span>
               </div>
@@ -317,7 +317,7 @@
               </div>
             </article>
 
-            <article class="event-row" data-grads="2029,2030">
+            <article class="event-row" data-grads="2029,2030" data-event-start="2027-01-09" data-event-end="2027-01-10">
               <div class="event-image" style="background-image: url('/assets/images/bic-winter-showcase.png'); background-size: contain; background-position: center; background-color: #b3cde8; background-repeat: no-repeat;" aria-hidden="true">
                 <span class="event-status event-status-opens">OPENS AUG 1</span>
               </div>
@@ -333,11 +333,11 @@
           </div>
         </div>
 
-        <div class="event-group">
+        <div class="event-group" id="event-summer-2027">
           <h3 class="event-group-label">Summer 2027</h3>
           <div class="event-grid">
 
-            <article class="event-row" data-grads="2029">
+            <article class="event-row" data-grads="2029" data-event-start="2027-06-08" data-event-end="2027-06-09">
               <div class="event-image" aria-hidden="true">
                 <span class="event-status event-status-invite">INVITE-ONLY</span>
               </div>
@@ -350,7 +350,7 @@
               </div>
             </article>
 
-            <article class="event-row" data-grads="2028,2029">
+            <article class="event-row" data-grads="2028,2029" data-event-start="2027-06-10" data-event-end="2027-06-10">
               <div class="event-image" aria-hidden="true">
                 <span class="event-status event-status-invite">INVITE-ONLY</span>
               </div>
@@ -363,7 +363,7 @@
               </div>
             </article>
 
-            <article class="event-row" data-grads="2030">
+            <article class="event-row" data-grads="2030" data-event-start="2027-06-21" data-event-end="2027-06-22">
               <div class="event-image" aria-hidden="true">
                 <span class="event-status event-status-invite">INVITE-ONLY</span>
               </div>
@@ -376,7 +376,7 @@
               </div>
             </article>
 
-            <article class="event-row" data-grads="2031">
+            <article class="event-row" data-grads="2031" data-event-start="2027-06-21" data-event-end="2027-06-22">
               <div class="event-image" aria-hidden="true">
                 <span class="event-status event-status-invite">INVITE-ONLY</span>
               </div>
@@ -389,7 +389,7 @@
               </div>
             </article>
 
-            <article class="event-row" data-grads="2030">
+            <article class="event-row" data-grads="2030" data-event-start="2027-06-14" data-event-end="2027-06-15">
               <div class="event-image" aria-hidden="true">
                 <span class="event-status event-status-invite">INVITE-ONLY</span>
               </div>
@@ -402,7 +402,7 @@
               </div>
             </article>
 
-            <article class="event-row" data-grads="2031">
+            <article class="event-row" data-grads="2031" data-event-start="2027-06-14" data-event-end="2027-06-15">
               <div class="event-image" aria-hidden="true">
                 <span class="event-status event-status-invite">INVITE-ONLY</span>
               </div>
@@ -415,7 +415,7 @@
               </div>
             </article>
 
-            <article class="event-row" data-grads="2029">
+            <article class="event-row" data-grads="2029" data-event-start="2027-06-16" data-event-end="2027-06-17">
               <div class="event-image" aria-hidden="true">
                 <span class="event-status event-status-invite">INVITE-ONLY</span>
               </div>
@@ -717,16 +717,75 @@
     // Footer year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Countdown to next event
+    // Auto-hide past events + auto-target countdown to next upcoming event
     (function() {
+      var now = Date.now();
+      var cards = document.querySelectorAll('.event-row[data-event-end]');
+      var upcoming = [];
+
+      cards.forEach(function(card) {
+        // Event stays visible until 11:59:59pm of its last day
+        var end = new Date(card.dataset.eventEnd + 'T23:59:59').getTime();
+        if (end < now) {
+          card.classList.add('is-hidden');
+          return;
+        }
+        var startStr = card.dataset.eventStart || card.dataset.eventEnd;
+        var start = new Date(startStr + 'T00:00:00').getTime();
+        var name = card.querySelector('h3') ? card.querySelector('h3').textContent.trim() : '';
+        var metaEl = card.querySelector('.event-meta');
+        var venue = '';
+        if (metaEl) {
+          // event-meta format: "Date · Venue · City, State" — strip the date, keep the rest
+          var parts = metaEl.textContent.split('·').map(function(p) { return p.trim(); });
+          if (parts.length > 1) venue = parts.slice(1).join(' · ');
+        }
+        var group = card.closest('.event-group');
+        upcoming.push({
+          start: start,
+          startStr: startStr,
+          name: name,
+          venue: venue,
+          groupId: group && group.id ? group.id : ''
+        });
+      });
+
+      // Hide any event group whose cards are all hidden
+      document.querySelectorAll('.event-group').forEach(function(group) {
+        var visible = group.querySelectorAll('.event-row:not(.is-hidden)');
+        if (visible.length === 0) group.classList.add('is-hidden');
+      });
+
+      // Rewire countdown to the nearest upcoming event
       var strip = document.querySelector('.countdown-strip');
       if (!strip) return;
+
+      if (upcoming.length === 0) {
+        strip.style.display = 'none';
+        return;
+      }
+
+      upcoming.sort(function(a, b) { return a.start - b.start; });
+      var next = upcoming[0];
+
+      // Update countdown target + label + anchor
+      strip.dataset.eventDate = next.startStr;
+      var line1 = strip.querySelector('.countdown-line-1');
+      var line2 = strip.querySelector('.countdown-line-2');
+      var link = strip.querySelector('.countdown-link');
+      if (line1) {
+        var d = new Date(next.startStr + 'T00:00:00');
+        var dateStr = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+        line1.textContent = 'Days Until ' + next.name + ' · ' + dateStr;
+      }
+      if (line2 && next.venue) line2.textContent = next.venue;
+      if (link && next.groupId) link.href = '#' + next.groupId;
+
+      // Now render the day count against the (possibly updated) target
       var target = new Date(strip.dataset.eventDate + 'T00:00:00').getTime();
-      var now = Date.now();
       var days = Math.max(0, Math.ceil((target - now) / (1000 * 60 * 60 * 24)));
       var el = document.getElementById('countdown-days');
       if (el) el.textContent = days;
-      if (days === 0) strip.style.display = 'none';
     })();
 
     // Grad-class filter
