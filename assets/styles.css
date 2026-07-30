@@ -1394,25 +1394,26 @@ a { color: inherit; }
 .about-section { padding: 100px 40px; }
 .about-intro {
   max-width: var(--max);
-  margin: 0 auto 64px;
+  margin: 0 auto 48px;
 }
-.about-intro .eyebrow { color: var(--muted); margin-bottom: 20px; }
+.about-intro .eyebrow { color: var(--muted); margin-bottom: 16px; }
 .about-intro h2 {
   color: var(--primary);
-  font-size: clamp(42px, 5.5vw, 72px);
+  font-size: clamp(36px, 4.5vw, 60px);
   line-height: 1.02;
   letter-spacing: -2px;
   font-weight: 900;
-  margin-bottom: 24px;
+  margin-bottom: 16px;
   text-transform: none;
+  white-space: nowrap;
 }
 .learn-train-compete {
-  font-size: clamp(22px, 3vw, 36px);
+  font-size: clamp(18px, 2.2vw, 28px);
   font-weight: 900;
   letter-spacing: 2px;
   text-transform: uppercase;
   color: var(--secondary);
-  margin-bottom: 20px;
+  margin-bottom: 16px;
 }
 .about-body {
   font-size: 17px;
