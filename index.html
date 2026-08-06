@@ -917,6 +917,72 @@
         else if (e.key === 'ArrowLeft') prev();
       });
     })();
+
+    // APPLY / REGISTER click tracking → GA4 custom events
+    (function() {
+      function fire(name, params) {
+        if (typeof window.gtag !== 'function') return;
+        window.gtag('event', name, params || {});
+      }
+
+      function cleanLabel(text) {
+        return (text || '').replace(/[→→\s]+$/g, '').trim();
+      }
+
+      // Event card CTAs (APPLY / REGISTER buttons on each event)
+      document.querySelectorAll('.event-row a.event-cta').forEach(function(link) {
+        link.addEventListener('click', function() {
+          var card = link.closest('.event-row');
+          var name = card && card.querySelector('h3') ? card.querySelector('h3').textContent.trim() : 'unknown';
+          var label = cleanLabel(link.textContent);
+          fire('apply_click', {
+            event_name_bic: name,
+            location: 'event_card',
+            cta_label: label
+          });
+        });
+      });
+
+      // Nav APPLY
+      var navBtn = document.querySelector('.nav-cta');
+      if (navBtn) {
+        navBtn.addEventListener('click', function() {
+          fire('apply_click', { location: 'nav', cta_label: 'APPLY' });
+        });
+      }
+
+      // Hero APPLY HERE
+      var heroBtn = document.querySelector('.hero .cta-primary');
+      if (heroBtn) {
+        heroBtn.addEventListener('click', function() {
+          fire('apply_click', { location: 'hero', cta_label: cleanLabel(heroBtn.textContent) || 'APPLY HERE' });
+        });
+      }
+
+      // Closer APPLY HERE
+      var closerBtn = document.querySelector('.closer .cta-primary');
+      if (closerBtn) {
+        closerBtn.addEventListener('click', function() {
+          fire('apply_click', { location: 'closer', cta_label: cleanLabel(closerBtn.textContent) || 'APPLY HERE' });
+        });
+      }
+
+      // For Coaches → NOMINATE A PLAYER
+      var coachBtn = document.querySelector('.coaches-strip-cta');
+      if (coachBtn) {
+        coachBtn.addEventListener('click', function() {
+          fire('nominate_click', { location: 'coaches_strip', cta_label: 'NOMINATE A PLAYER' });
+        });
+      }
+
+      // READ MORE REVIEWS modal open (bonus — track engagement with social proof)
+      var reviewsBtn = document.getElementById('reviews-more-btn');
+      if (reviewsBtn) {
+        reviewsBtn.addEventListener('click', function() {
+          fire('reviews_open', { location: 'reviews_section' });
+        });
+      }
+    })();
   </script>
 </body>
 </html>
