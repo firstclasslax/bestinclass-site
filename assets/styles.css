@@ -1422,40 +1422,149 @@ a { color: inherit; }
   max-width: 100%;
   margin-left: 0;
 }
-.rising-cards {
+/* ------- RISING CARDS V2 ------- */
+.rising-cards-v2 {
   max-width: var(--max);
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 0;
+  gap: 24px;
+}
+.rc {
+  background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 4px;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+}
+/* Top image strip */
+.rc-top {
+  position: relative;
+  height: 180px;
+  background: #f0f2f5;
   overflow: hidden;
 }
-.rising-card {
-  padding: 40px 36px;
-  border-right: 1px solid var(--border);
-  background: var(--surface);
-}
-.rising-card:last-child { border-right: none; }
-.rising-card h3 {
-  font-size: 15px;
+.rc-num {
+  position: absolute;
+  top: 12px;
+  left: 20px;
+  font-size: 72px;
   font-weight: 900;
-  letter-spacing: 1.2px;
+  line-height: 1;
+  color: rgba(0,0,0,0.07);
+  z-index: 1;
+  user-select: none;
+}
+.rc-img {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+}
+/* Placeholder state — hidden when real image is set */
+.rc-img::after {
+  content: 'PLAYER PHOTO';
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 24px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: rgba(0,0,0,0.2);
+}
+.rc-img[style]::after { display: none; }
+
+/* Card body */
+.rc-body {
+  padding: 28px 28px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.rc-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--muted);
+  margin-bottom: 4px;
   text-transform: uppercase;
-  color: var(--secondary);
-  margin-bottom: 12px;
 }
-.rising-card p {
+.rc-title {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+.rc-blue { color: var(--primary); }
+.rc-red  { color: var(--secondary); }
+
+.rc-divider {
+  width: 36px;
+  height: 3px;
+  border-radius: 2px;
+  margin-bottom: 14px;
+}
+.rc-divider-blue { background: var(--primary); }
+.rc-divider-red  { background: var(--secondary); }
+
+.rc-tagline {
   font-size: 16px;
-  line-height: 1.6;
+  font-weight: 600;
   color: var(--text);
+  margin-bottom: 20px;
+  line-height: 1.4;
 }
+.rc-features {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.rc-features li {
+  font-size: 14px;
+  color: var(--muted);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.4;
+}
+.rc-features li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 2px solid var(--border);
+}
+.rc-link {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-top: 1px solid var(--border);
+  padding-top: 16px;
+  display: inline-block;
+}
+.rc-link-blue { color: var(--primary); }
+.rc-link-red  { color: var(--secondary); }
+.rc-link:hover { opacity: 0.75; }
+
 @media (max-width: 900px) {
   .about-section { padding: 72px 24px; }
-  .rising-cards { grid-template-columns: 1fr; }
-  .rising-card { border-right: none; border-bottom: 1px solid var(--border); }
-  .rising-card:last-child { border-bottom: none; }
+  .rising-cards-v2 { grid-template-columns: 1fr; gap: 16px; }
 }
 
 /* ------- WHO BIC IS FOR — 3-card path grid (removed section, CSS retained for backwards compat) ------- */
