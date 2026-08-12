@@ -1420,6 +1420,7 @@ a { color: inherit; }
   line-height: 1.65;
   color: var(--text);
   max-width: 680px;
+  margin-left: 0;
 }
 .rising-cards {
   max-width: var(--max);
