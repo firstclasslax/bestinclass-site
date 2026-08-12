@@ -1419,7 +1419,7 @@ a { color: inherit; }
   font-size: 17px;
   line-height: 1.65;
   color: var(--text);
-  max-width: 680px;
+  max-width: 100%;
   margin-left: 0;
 }
 .rising-cards {
