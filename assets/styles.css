@@ -161,7 +161,7 @@ a { color: inherit; }
   letter-spacing: 2.5px;
   font-size: 12px;
   font-weight: 800;
-  color: var(--muted);
+  color: var(--secondary);
   margin-bottom: 28px;
 }
 .eyebrow-center { text-align: center; }
@@ -245,8 +245,8 @@ a { color: inherit; }
   margin: 0 auto 80px;
 }
 .section-head h2 {
-  font-size: clamp(40px, 6vw, 72px);
-  line-height: 1.05;
+  font-size: clamp(36px, 4.5vw, 60px);
+  line-height: 1.02;
   letter-spacing: -2px;
   font-weight: 900;
   margin-bottom: 16px;
