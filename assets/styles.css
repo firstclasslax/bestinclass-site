@@ -338,12 +338,38 @@ a { color: inherit; }
   pointer-events: none;
 }
 
+/* Overlap band — spans behind steps 2 & 3 to show they run concurrently */
+.bt-overlap-band {
+  position: absolute;
+  top: 0;
+  left: 25%;
+  width: 50%;
+  bottom: 0;
+  background: color-mix(in srgb, var(--primary) 5%, transparent);
+  border-left: 1px dashed color-mix(in srgb, var(--primary) 30%, transparent);
+  border-right: 1px dashed color-mix(in srgb, var(--primary) 30%, transparent);
+  border-radius: 4px;
+  z-index: 0;
+  pointer-events: none;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 10px;
+}
+.bt-overlap-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--primary) 55%, transparent);
+}
+
 .bt-step {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: 0 20px 0;
+  padding: 0 20px 40px;
   position: relative;
   z-index: 2;
 }
@@ -436,7 +462,8 @@ a { color: inherit; }
     gap: 0;
   }
   .bt-connector,
-  .bt-connector-end {
+  .bt-connector-end,
+  .bt-overlap-band {
     display: none;
   }
   .bt-step {
