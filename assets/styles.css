@@ -306,6 +306,189 @@ a { color: inherit; }
   .pillar:last-child { border-bottom: none; }
 }
 
+/* ------- BIC TIMELINE ------- */
+.bic-timeline {
+  max-width: var(--max);
+  margin: 0 auto 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  position: relative;
+  gap: 0;
+}
+
+/* Horizontal connector line behind nodes */
+.bt-connector {
+  position: absolute;
+  top: 36px;
+  left: calc(12.5% + 1px);
+  right: calc(12.5% + 1px);
+  height: 2px;
+  background: var(--primary);
+  z-index: 0;
+  pointer-events: none;
+}
+.bt-connector-end {
+  position: absolute;
+  top: 36px;
+  right: calc(12.5% + 1px);
+  width: 25%;
+  height: 2px;
+  background: var(--secondary);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.bt-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px 0;
+  position: relative;
+  z-index: 2;
+}
+
+/* Date chip above node */
+.bt-date-chip {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--primary) 25%, transparent);
+  border-radius: 20px;
+  padding: 4px 10px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+.bt-date-chip--red {
+  color: var(--secondary);
+  background: color-mix(in srgb, var(--secondary) 10%, transparent);
+  border-color: color-mix(in srgb, var(--secondary) 25%, transparent);
+}
+
+/* Circle node */
+.bt-node {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+  box-shadow: 0 0 0 6px var(--bg-alt);
+}
+.bt-node--red {
+  border-color: var(--secondary);
+  color: var(--secondary);
+}
+
+/* Step content */
+.bt-content {
+  text-align: center;
+}
+.bt-title {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 10px;
+}
+.bt-step--destination .bt-title {
+  color: var(--secondary);
+}
+.bt-body {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+/* Secondary callout bar */
+.bic-open-callout {
+  max-width: var(--max);
+  margin: 0 auto;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 16px 24px;
+  background: var(--surface);
+  text-align: center;
+}
+.bic-open-callout p {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.bic-open-callout strong {
+  color: var(--text);
+  font-weight: 700;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .bic-timeline {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .bt-connector,
+  .bt-connector-end {
+    display: none;
+  }
+  .bt-step {
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+    gap: 20px;
+    padding: 0 0 32px 0;
+    position: relative;
+  }
+  .bt-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    left: 25px;
+    top: 36px;
+    bottom: 0;
+    width: 2px;
+    background: var(--primary);
+    z-index: 0;
+  }
+  .bt-step--destination:not(:last-child)::after,
+  .bt-step:last-child::after {
+    background: var(--secondary);
+  }
+  .bt-step > .bt-date-chip {
+    display: none;
+  }
+  .bt-node {
+    flex-shrink: 0;
+    margin-bottom: 0;
+    position: relative;
+    z-index: 1;
+  }
+  .bt-content {
+    text-align: left;
+    padding-top: 12px;
+  }
+  .bt-content .bt-title::before {
+    display: block;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 4px;
+  }
+  .bt-step:nth-child(3) .bt-title::before { content: 'JULY'; }
+  .bt-step:nth-child(4) .bt-title::before { content: 'FALL & WINTER'; }
+  .bt-step:nth-child(5) .bt-title::before { content: 'ROLLING'; }
+  .bt-step:nth-child(6) .bt-title::before { content: 'JUNE'; color: var(--secondary); }
+}
+
 /* ------- EVENT STACK ------- */
 .event-stack {
   max-width: var(--max);
