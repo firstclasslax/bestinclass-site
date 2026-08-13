@@ -876,12 +876,30 @@ a { color: inherit; }
 
 /* ------- MEDIA / BROADCAST CALLOUT ------- */
 .media-callout {
+  position: relative;
   padding: 100px 40px;
   background: var(--text);
   color: var(--bg);
   text-align: center;
+  overflow: hidden;
+}
+.media-callout-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+.media-callout-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 22, 28, 0.65);
+  z-index: 1;
 }
 .media-callout-inner {
+  position: relative;
+  z-index: 2;
   max-width: 800px;
   margin: 0 auto;
 }
