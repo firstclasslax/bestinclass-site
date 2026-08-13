@@ -250,6 +250,7 @@ a { color: inherit; }
   letter-spacing: -2px;
   font-weight: 900;
   margin-bottom: 16px;
+  color: var(--primary);
 }
 .lede {
   color: var(--muted);
