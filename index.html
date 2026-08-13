@@ -233,6 +233,43 @@
       </div>
     </div>
 
+    <!-- Coach videos — Why I'm Here -->
+    <section id="coaches" class="coaches-section">
+      <div class="section-head">
+        <p class="eyebrow">COACHES</p>
+        <h2>Why we show up.</h2>
+        <p class="lede">D1 coaches on what brings them to Best In Class events.</p>
+      </div>
+
+      <div class="coaches-player">
+        <video id="coach-featured-video"
+          controls
+          preload="metadata"
+          playsinline
+          src="https://www.1stclasslax.com/hubfs/bestinclass.com/Maryland%20Why%20Im%20Here.mp4"
+        ></video>
+      </div>
+
+      <div class="coaches-tabs" role="group" aria-label="Choose a coach video">
+        <button type="button" class="coach-tab active" data-video="https://www.1stclasslax.com/hubfs/bestinclass.com/Maryland%20Why%20Im%20Here.mp4" data-school="Maryland">
+          <span class="coach-tab-school">Maryland</span>
+          <span class="coach-tab-title">Why I'm Here</span>
+        </button>
+        <button type="button" class="coach-tab" data-video="https://www.1stclasslax.com/hubfs/bestinclass.com/Virginia%20Tech%20Why%20Im%20Here.mp4" data-school="Virginia Tech">
+          <span class="coach-tab-school">Virginia Tech</span>
+          <span class="coach-tab-title">Why I'm Here</span>
+        </button>
+        <button type="button" class="coach-tab" data-video="https://www.1stclasslax.com/hubfs/bestinclass.com/Delaware%20Why%20Im%20Here.mp4" data-school="Delaware">
+          <span class="coach-tab-school">Delaware</span>
+          <span class="coach-tab-title">Why I'm Here</span>
+        </button>
+        <button type="button" class="coach-tab" data-video="https://www.1stclasslax.com/hubfs/bestinclass.com/Saint%20Josephs%20Why%20Im%20Here.mp4" data-school="Saint Joseph's">
+          <span class="coach-tab-school">Saint Joseph's</span>
+          <span class="coach-tab-title">Why I'm Here</span>
+        </button>
+      </div>
+    </section>
+
     <!-- Stat callouts strip -->
     <section class="stats-strip">
       <div class="stats-inner">
@@ -1002,6 +1039,37 @@
         if (e.key === 'Escape') close();
         else if (e.key === 'ArrowRight') next();
         else if (e.key === 'ArrowLeft') prev();
+      });
+    })();
+
+    // Coach video tab switcher
+    (function() {
+      var video = document.getElementById('coach-featured-video');
+      var tabs = document.querySelectorAll('.coach-tab');
+      if (!video || !tabs.length) return;
+      tabs.forEach(function(tab) {
+        tab.addEventListener('click', function() {
+          var src = tab.dataset.video;
+          if (!src) return;
+          tabs.forEach(function(t) { t.classList.remove('active'); });
+          tab.classList.add('active');
+          video.pause();
+          video.src = src;
+          video.load();
+          if (typeof window.gtag === 'function') {
+            window.gtag('event', 'coach_video_select', {
+              school: tab.dataset.school || ''
+            });
+          }
+        });
+      });
+      // Track when a coach video starts playing (engagement)
+      video.addEventListener('play', function() {
+        if (typeof window.gtag !== 'function') return;
+        var active = document.querySelector('.coach-tab.active');
+        window.gtag('event', 'coach_video_play', {
+          school: active ? (active.dataset.school || '') : ''
+        });
       });
     })();
 

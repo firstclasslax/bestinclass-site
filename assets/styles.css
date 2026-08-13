@@ -1505,6 +1505,80 @@ a { color: inherit; }
   .reviews-modal-counter { order: -1; width: 100%; text-align: center; }
 }
 
+/* ------- COACH VIDEOS (Why I'm Here) ------- */
+.coaches-section {
+  padding: 100px 40px;
+  background: var(--bg);
+}
+.coaches-player {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #000;
+  border-radius: 4px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
+}
+.coaches-player video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+.coaches-tabs {
+  max-width: 900px;
+  margin: 32px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+}
+.coach-tab {
+  padding: 18px 14px;
+  background: transparent;
+  border: none;
+  border-top: 3px solid var(--border);
+  cursor: pointer;
+  text-align: left;
+  transition: border-color 0.15s, background 0.15s;
+  font-family: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.coach-tab:hover {
+  border-top-color: var(--muted);
+  background: var(--bg-alt);
+}
+.coach-tab.active {
+  border-top-color: var(--primary);
+  background: var(--bg-alt);
+}
+.coach-tab-school {
+  font-weight: 900;
+  font-size: 15px;
+  color: var(--text);
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+}
+.coach-tab-title {
+  font-size: 11px;
+  color: var(--muted);
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+@media (max-width: 700px) {
+  .coaches-section { padding: 72px 20px; }
+  .coaches-tabs {
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+  .coach-tab { padding: 14px 12px; }
+  .coach-tab-school { font-size: 13px; }
+  .coach-tab-title { font-size: 10px; letter-spacing: 1px; }
+}
+
 /* ------- STAT CALLOUTS STRIP ------- */
 .stats-strip {
   padding: 72px 40px;
