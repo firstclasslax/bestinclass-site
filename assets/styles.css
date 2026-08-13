@@ -1529,20 +1529,21 @@ a { color: inherit; }
   background: var(--bg);
 }
 .coaches-player {
-  max-width: 900px;
+  width: fit-content;
+  max-width: 100%;
   margin: 0 auto;
   background: #000;
   border-radius: 4px;
   overflow: hidden;
   border: 1px solid var(--border);
-  aspect-ratio: 16 / 9;
   box-shadow: 0 12px 40px rgba(0, 0, 0, 0.12);
 }
 .coaches-player video {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
   display: block;
+  max-width: 100%;
+  max-height: 75vh;
+  width: auto;
+  height: auto;
 }
 .coaches-tabs {
   max-width: 900px;
