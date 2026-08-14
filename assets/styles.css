@@ -342,7 +342,7 @@ a { color: inherit; }
 /* Overlap band — spans behind steps 2 & 3 to show they run concurrently */
 .bt-overlap-band {
   position: absolute;
-  top: 0;
+  top: -20px;
   left: 25%;
   width: 50%;
   bottom: 0;
