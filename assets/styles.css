@@ -1025,6 +1025,17 @@ a { color: inherit; }
 /* ------- FAQ ACCORDION ------- */
 #faqs { padding: 80px 40px; }
 #faqs .section-head { margin-bottom: 48px; }
+.faq-callout {
+  max-width: 760px;
+  margin: 0 auto 32px;
+  background: #eaf1fb;
+  border-left: 4px solid var(--primary);
+  border-radius: 6px;
+  padding: 14px 20px;
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.5;
+}
 .faq-list {
   max-width: 760px;
   margin: 0 auto;
