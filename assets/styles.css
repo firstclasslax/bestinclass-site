@@ -1028,10 +1028,10 @@ a { color: inherit; }
 .faq-callout {
   max-width: 760px;
   margin: 0 auto 32px;
-  background: #eaf1fb;
-  border-left: 4px solid var(--primary);
+  background: #d6e6f7;
+  border-left: 6px solid var(--primary);
   border-radius: 6px;
-  padding: 14px 20px;
+  padding: 16px 20px;
   font-size: 14px;
   color: var(--text);
   line-height: 1.5;
