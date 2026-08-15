@@ -1645,6 +1645,12 @@ a { color: inherit; }
   text-transform: uppercase;
   color: var(--muted);
 }
+.sp-survey-note {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 6px;
+  line-height: 1.5;
+}
 .sp-stats {
   display: flex;
   align-items: center;
