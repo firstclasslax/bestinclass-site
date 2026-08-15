@@ -1603,45 +1603,114 @@ a { color: inherit; }
 }
 
 /* ------- STAT CALLOUTS STRIP ------- */
-.stats-strip {
-  padding: 72px 40px;
+/* ------- SOCIAL PROOF ------- */
+.social-proof {
+  padding: 80px 40px;
   background: var(--bg);
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
 }
-.stats-inner {
+.sp-inner {
   max-width: var(--max);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 32px;
-  text-align: center;
-}
-.stat {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 48px;
 }
-.stat-number {
-  font-size: clamp(56px, 8vw, 96px);
+
+/* Stats row */
+.sp-stats-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid var(--border);
+}
+.sp-source {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.sp-stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  width: 100%;
+}
+.sp-stat {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 0 32px;
+}
+.sp-stat-divider {
+  width: 1px;
+  height: 56px;
+  background: var(--border);
+  flex-shrink: 0;
+}
+.sp-stat-num {
+  font-size: clamp(36px, 5vw, 60px);
   font-weight: 900;
-  letter-spacing: -3px;
+  letter-spacing: -1.5px;
   line-height: 1;
   color: var(--primary);
 }
-.stat-label {
+.sp-stat-lbl {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.4;
+  max-width: 180px;
+}
+
+/* Testimonial cards */
+.sp-quotes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+.sp-quote {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 32px;
+  background: var(--surface);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.sp-stars {
+  font-size: 16px;
+  color: var(--primary);
+  letter-spacing: 2px;
+}
+.sp-quote-text {
+  font-size: 16px;
+  line-height: 1.7;
+  color: var(--text);
+  font-style: italic;
+}
+.sp-cite {
   font-size: 13px;
   font-weight: 700;
-  letter-spacing: 0.4px;
   color: var(--muted);
-  line-height: 1.4;
+  font-style: normal;
+  letter-spacing: 0.2px;
 }
+
 @media (max-width: 800px) {
-  .stats-inner {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 40px;
-  }
-  .stats-strip { padding: 56px 24px; }
+  .social-proof { padding: 56px 24px; }
+  .sp-stats { flex-direction: column; gap: 24px; }
+  .sp-stat-divider { width: 40px; height: 1px; }
+  .sp-stat { padding: 0; }
+  .sp-quotes { grid-template-columns: 1fr; }
 }
 
 /* ------- COACH PARADE (Men's + Women's attending coaches) ------- */
