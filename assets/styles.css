@@ -1142,6 +1142,33 @@ a { color: inherit; }
   margin-bottom: 40px;
   color: var(--bg);
 }
+.closer-headline {
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 900;
+  letter-spacing: -1px;
+  color: var(--bg);
+  margin-bottom: 12px;
+}
+.closer-sub {
+  font-size: 18px;
+  color: rgba(255,255,255,0.85);
+  margin-bottom: 28px;
+}
+.closer-body {
+  font-size: 16px;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto 16px;
+}
+.closer-event-label {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.6);
+  margin: 36px 0 16px;
+}
 .closer .cta-primary { background: var(--primary); color: #ffffff; }
 .closer .cta-primary:hover { background: var(--primary-hover); }
 .closer .cta-secondary { border-color: var(--bg); color: var(--bg); }
