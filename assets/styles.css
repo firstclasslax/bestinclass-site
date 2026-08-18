@@ -1076,14 +1076,28 @@ a { color: inherit; }
   line-height: 1.55;
   padding-right: 32px;
 }
-.faq-item p a {
+.faq-item p + p { margin-top: 8px; }
+.faq-item p strong { color: var(--text); font-weight: 900; }
+.faq-item ul {
+  margin: 8px 0 0;
+  padding-left: 22px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.55;
+  padding-right: 32px;
+}
+.faq-item li { margin-bottom: 4px; }
+.faq-item li:last-child { margin-bottom: 0; }
+.faq-item p a,
+.faq-item li a {
   color: var(--primary);
   text-decoration: none;
   font-weight: 700;
   border-bottom: 1px solid var(--soft);
   transition: border-color 0.15s;
 }
-.faq-item p a:hover { border-bottom-color: var(--primary); }
+.faq-item p a:hover,
+.faq-item li a:hover { border-bottom-color: var(--primary); }
 
 /* ------- CREDIBILITY BLOCK (testimonials in About) ------- */
 .credibility-block {
