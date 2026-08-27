@@ -18,6 +18,7 @@
   --primary-hover: #285a94;
   --secondary: #db3a34;     /* BIC brand secondary — Coaches Nominate CTAs */
   --secondary-hover: #b8302a;
+  --secondary-text: #b8302a; /* WCAG AA-safe red for small text on white */
   --accent: #326fb5;        /* aliased to primary for eyebrows / accents */
   --accent-ink: #ffffff;
   --max: 1200px;
@@ -161,7 +162,7 @@ a { color: inherit; }
   letter-spacing: 2.5px;
   font-size: 12px;
   font-weight: 800;
-  color: var(--secondary);
+  color: var(--secondary-text);
   margin-bottom: 28px;
 }
 .eyebrow-center { text-align: center; }
@@ -1261,7 +1262,8 @@ a { color: inherit; }
   letter-spacing: 1.4px;
   text-transform: uppercase;
   line-height: 1.3;
-  color: #cfe2f7;
+  color: #ffffff;
+  opacity: 0.9;
 }
 .countdown-arrow {
   font-size: 26px;
@@ -2001,7 +2003,7 @@ a { color: inherit; }
   display: inline-block;
 }
 .rc-link-blue { color: var(--primary); }
-.rc-link-red  { color: var(--secondary); }
+.rc-link-red  { color: var(--secondary-text); }
 .rc-link:hover { opacity: 0.75; }
 
 @media (max-width: 900px) {
