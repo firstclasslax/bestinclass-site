@@ -1223,8 +1223,8 @@ a { color: inherit; }
 }
 .countdown-link:hover { background: rgba(0, 0, 0, 0.08); }
 .countdown-eyebrow {
-  background: #ffffff;
-  color: var(--secondary);
+  background: var(--primary);
+  color: #ffffff;
   padding: 7px 14px;
   font-size: 12px;
   font-weight: 900;
@@ -1232,6 +1232,7 @@ a { color: inherit; }
   border-radius: 2px;
   white-space: nowrap;
   line-height: 1;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.15);
 }
 .countdown-strip #countdown-days {
   color: #ffffff;
@@ -1260,7 +1261,7 @@ a { color: inherit; }
   letter-spacing: 1.4px;
   text-transform: uppercase;
   line-height: 1.3;
-  opacity: 0.78;
+  color: #cfe2f7;
 }
 .countdown-arrow {
   font-size: 26px;
