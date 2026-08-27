@@ -1982,6 +1982,13 @@ a { color: inherit; }
   border-radius: 50%;
   border: 2px solid var(--border);
 }
+.rc-features-text {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 0 0 24px;
+  flex: 1;
+}
 .rc-link {
   font-size: 12px;
   font-weight: 700;
